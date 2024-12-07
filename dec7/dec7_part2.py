@@ -1,3 +1,5 @@
+# https://adventofcode.com/2024/day/7
+
 import numpy as np
 
 file_name = 'input.txt'
@@ -14,12 +16,19 @@ res_sum = 0
 index = 0
 for res, nums in data:
     index += 1
-    # print(f'Checking entry {index}/{len(data)}')
+    print(f'Checking entry {index}/{len(data)}')
+
+    # Number of possible operation combinations = 3^(len(nums) - 1)
     for op in range(pow(3, len(nums) - 1)):
+
+        # This time create a ternary string that describes what operation to use
+        # 0 - addition
+        # 1 - multiplication
+        # 2 - concatenate
         ops = np.base_repr(op, base=3)
         ops = ('0' * (len(nums) - 1 - len(ops))) + ops
         temp_res = nums[0]
-        
+
         for i in range(1, len(nums)):
             if ops[i - 1] == '0':
                 temp_res += nums[i]

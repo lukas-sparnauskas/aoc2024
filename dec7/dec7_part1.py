@@ -1,3 +1,5 @@
+# https://adventofcode.com/2024/day/7
+
 import numpy as np
 
 file_name = 'input.txt'
@@ -12,8 +14,15 @@ with open(file_name, 'r') as file:
 res_sum = 0
 
 for res, nums in data:
+
+    # Number of possible operation combinations = 2^(len(nums) - 1)
     for op in range(pow(2, len(nums) - 1)):
+
+        # Create a binary string that describes what operation to use
+        # 0 - addition
+        # 1 - multiplication
         ops = np.binary_repr(op, width=len(nums) - 1)
+
         temp_res = nums[0]
         for i in range(1, len(nums)):
             if ops[i - 1] == '0':
