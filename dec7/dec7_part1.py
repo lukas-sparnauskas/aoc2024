@@ -29,6 +29,7 @@ for res, nums in data:
                 temp_res += nums[i]
             else:
                 temp_res *= nums[i]
+                
         if temp_res == res:
             res_sum += res
             break
