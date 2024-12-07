@@ -6,11 +6,13 @@ file_name = 'input.txt'
 
 data = []
 
+# Read the input file
 with open(file_name, 'r') as file:
     for line in file:
         parts = line.split(':')
         data.append((int(parts[0]), [int(x) for x in parts[1].split()]))
 
+# Solve
 res_sum = 0
 
 for res, nums in data:
@@ -29,7 +31,7 @@ for res, nums in data:
                 temp_res += nums[i]
             else:
                 temp_res *= nums[i]
-                
+
         if temp_res == res:
             res_sum += res
             break

@@ -6,17 +6,19 @@ file_name = 'input.txt'
 
 data = []
 
+# Read the input file
 with open(file_name, 'r') as file:
     for line in file:
         parts = line.split(':')
         data.append((int(parts[0]), [int(x) for x in parts[1].split()]))
 
+# Solve
 res_sum = 0
 
 index = 0
 for res, nums in data:
     index += 1
-    print(f'Checking entry {index}/{len(data)}')
+    print(f'Checking {index}/{len(data)} ({index/len(data)*100:.2f}%)')
 
     # Number of possible operation combinations = 3^(len(nums) - 1)
     for op in range(pow(3, len(nums) - 1)):
