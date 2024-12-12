@@ -59,7 +59,8 @@ for i in range(len(data)):
             region.add((i, j))
             region = get_point_region(region, i, j)
             regions.append(region)
-            
+
+# Get price
 price = 0
 for region in regions:
     price += len(region) * get_region_perimeter(region)
