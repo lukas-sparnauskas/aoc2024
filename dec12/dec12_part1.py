@@ -51,6 +51,7 @@ def get_region_perimeter(region):
             perimeter += 1
     return perimeter
 
+# Get all regions
 for i in range(len(data)):
     for j in range(len(data[i])):
         if not is_point_in_any_region(i, j):
@@ -59,8 +60,8 @@ for i in range(len(data)):
             region = get_point_region(region, i, j)
             regions.append(region)
             
-sum_area_perimeter = 0
+price = 0
 for region in regions:
-    sum_area_perimeter += len(region) * get_region_perimeter(region)
+    price += len(region) * get_region_perimeter(region)
             
-print(sum_area_perimeter)
+print(price)
