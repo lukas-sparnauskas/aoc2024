@@ -75,6 +75,7 @@ def get_region_number_of_sides(region):
                     sides += 1
     return sides
 
+# Get all regions
 for i in range(len(data)):
     for j in range(len(data[i])):
         if not is_point_in_any_region(i, j):
@@ -82,9 +83,10 @@ for i in range(len(data)):
             region.append((i, j))
             region = get_point_region(region, i, j)
             regions.append(region)
-            
-sum_area_perimeter = 0
+
+# Get price
+price = 0
 for region in regions:
-    sum_area_perimeter += len(region) * get_region_number_of_sides(region)
+    price += len(region) * get_region_number_of_sides(region)
             
-print(sum_area_perimeter)
+print(price)
