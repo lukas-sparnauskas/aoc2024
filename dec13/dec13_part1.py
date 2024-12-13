@@ -20,7 +20,6 @@ with open(file_path, 'r') as file:
 machine_index = 0
 prices = dict()
 
-# Calculate possible multipliers for each machine
 for machine_index in range(len(machines)):
     buttonA, buttonB, prize = machines[machine_index]
     # xA + yB = prize | with A being the buttonA value and B being the buttonB value and x and y being the number of times the buttons are pressed
@@ -40,8 +39,8 @@ for machine_index in range(len(machines)):
         elif y.is_integer() and y >= 0:
             prices[machine_index].append(3 * int(x) + int(y))
 
-num_tokens = 0 
-# Find the cheapest combinations
+num_tokens = 0
+# Find the cheapest prices
 for machine_index in prices.keys():
     num_tokens += min(prices[machine_index])
     
