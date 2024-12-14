@@ -25,7 +25,7 @@ prices = dict()
 for machine_index in range(len(machines)):
     buttonA, buttonB, prize = machines[machine_index]
     # xA + xB = prize | with A being the buttonA value and B being the buttonB value and x and y being the number of times the buttons are pressed
-    # Solve a linear algebra equation with matrices AX = B
+    # Solve a linear equation with matrices AX = B
     # [ buttonA[0] buttonB[0] ]   [ X ]   [ prize[0] ]
     # |                       | X |   | = |          |
     # [ buttonA[1] buttonB[1] ]   [ Y ]   [ prize[1] ]
